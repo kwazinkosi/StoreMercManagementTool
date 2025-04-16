@@ -1,0 +1,250 @@
+/* ================ */
+/* CSS Variables     */
+/* ================ */
+:root {
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --secondary-color: #2c3e50;
+    --success-color: #d4edda;
+    --success-text: #155724;
+    --success-border: #c3e6cb;
+    --error-color: #f8d7da;
+    --error-text: #721c24;
+    --error-border: #f5c6cb;
+    --text-color: #333;
+    --light-gray: #f5f5f5;
+    --white: #ffffff;
+    --border-color: #ddd;
+    --border-radius: 4px;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* ================ */
+/* Base Styles       */
+/* ================ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* ================ */
+/* Layout            */
+/* ================ */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ================ */
+/* Header            */
+/* ================ */
+header {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+}
+
+/* ================ */
+/* Forms             */
+/* ================ */
+.form-container {
+    background: var(--white);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+select.form-control {
+    height: 40px;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* ================ */
+/* Buttons           */
+/* ================ */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    width: 100%;
+    height: 100%;
+    left: -100%;
+    top: 0;
+    transition: left 0.3s ease;
+}
+
+.btn:hover::after {
+    left: 0;
+}
+
+/* ================ */
+/* Tables            */
+/* ================ */
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+}
+
+.results-table th, 
+.results-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.results-table th {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.results-table tr {
+    transition: background-color 0.2s ease;
+}
+
+.results-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* ================ */
+/* Messages          */
+/* ================ */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+}
+
+.alert-success {
+    background-color: var(--success-color);
+    color: var(--success-text);
+    border: 1px solid var(--success-border);
+}
+
+.alert-error {
+    background-color: var(--error-color);
+    color: var(--error-text);
+    border: 1px solid var(--error-border);
+}
+
+/* ================ */
+/* Links             */
+/* ================ */
+.action-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.action-link:hover {
+    text-decoration: underline;
+}
+
+/* ================ */
+/* Validation        */
+/* ================ */
+.has-error .form-control {
+    border-color: #e74c3c;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* ================ */
+/* Responsive        */
+/* ================ */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+    
+    .results-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .form-container {
+        padding: 15px;
+    }
+}

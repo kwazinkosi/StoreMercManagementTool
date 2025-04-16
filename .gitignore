@@ -1,0 +1,6 @@
+.classpath
+.codetogether.ignore
+.project
+.settings/
+target/
+
